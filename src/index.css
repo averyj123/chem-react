@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+   margin: 0;
+   background-color: rgb(244, 255, 242);
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   height: 100px;
+   background-color: rgb(120, 213, 120);
+   justify-content: center;
+   margin: 0;
+}
+
+h1 {
+   margin:10px;
+   color: white;
+   text-align: center;
+   vertical-align: middle;
+   height: 45px;
+   font-family: Barlow;
+   font-weight: 800;
+   background-color: rgb(120, 213, 120);
+   user-select: none;
+}
+
+.buttons {
+   display: flex;
+   justify-content: center;
+   justify-content: space-evenly;
+   flex-direction: column;
+   margin: 20px;
+   align-items: center;
+   }
+
+.buttons button {
+   margin: 10px;
+   padding: 20px;
+   width: 300px;
+   background-color: rgb(120, 213, 120);
+   border: 3px solid rgb(120, 213, 120);
+   border-radius: 20px;
+   color: white;
+   font-weight: 500;
+   font-size: 20px;
+   font-family: Barlow;
+}
+
+button:hover {
+   cursor:pointer;
+   background-color: rgb(109, 193, 109);
+   border-color: rgb(109, 193, 109);
+   font-weight: 700;
+}
+#hello{
+   background: transparent;
+   color: white;
+   align-self:center;
+}
