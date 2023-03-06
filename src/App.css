@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  background-color: rgb(244, 255, 242);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  height: 100px;
+  background-color: rgb(120, 213, 120);
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0;
+}
+
+h1 {
+  margin: 10px;
   color: white;
+  text-align: center;
+  vertical-align: middle;
+  height: 45px;
+  font-family: Barlow;
+  font-weight: 800;
+  background-color: rgb(120, 213, 120);
+  user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons button {
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  background-color: rgb(120, 213, 120);
+  border: 3px solid rgb(120, 213, 120);
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Barlow;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(109, 193, 109);
+  border-color: rgb(109, 193, 109);
+  font-weight: 700;
+}
+
+#hello {
+  background: transparent;
+  color: white;
+  align-self: center;
 }
