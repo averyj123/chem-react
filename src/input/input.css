@@ -1,0 +1,32 @@
+
+
+.inputbox {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#hello {
+   background-color: rgb(216, 255, 214);
+   border: 2px solid rgb(97, 169, 90);
+   border-radius: 10px;
+   color: rgb(97, 169, 90);
+   font-weight: 500;
+   font-size: 15px;
+   font-family: Barlow;
+   width: 80px;
+   height: 35px;
+   padding: 5px;
+}
+
+.inputbox input {
+   height: 30px;
+   border-radius: 5px;
+   padding-left: 10px;
+   border: 1px solid rgba(0, 0, 0, 0.47);
+}
+
+#hello:hover {
+   background-color: rgb(97, 169, 90);
+   color: white;
+}

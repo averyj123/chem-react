@@ -21,16 +21,32 @@ function App(props) {
 
   return (
     <>
-    <div class="header">
+    <div className="header">
         <h1>chemistry help</h1>
     </div>
-    <div class="buttons">
+    <div className="buttons">
         <button id="grams" onClick = {handleGtomClick}>grams to moles</button>
-        {gtomclicked && <Input/>}
+        {gtomclicked && (
+          <>
+            <Input placeholder = "grams" inputType="number"/>
+            <Input placeholder = "molecule" inputType="text"/>
+          </>
+          )}
         <button id="conc" onClick = {handleCtogClick}>concentration to grams</button>
-        {ctogclicked && <Input/>}
+        {ctogclicked &&  (
+          <>
+            <Input placeholder = "concentration" inputType = "number"/>
+            <Input placeholder = "volume" inputType="number"/>
+            <Input placeholder = "molecule" inputType="text"/>
+          </>
+          )}
         <button id="moles" onClick = {handleMtogClick}>moles to grams</button>
-        {mtogclicked && <Input/>}
+        {mtogclicked &&  (
+          <>
+            <Input placeholder = "moles" inputType="number"/>
+            <Input placeholder = "molecule" inputType="text"/>
+          </>
+          )}
     </div>
    </>
   );
