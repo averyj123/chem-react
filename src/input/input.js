@@ -1,10 +1,16 @@
-import './input.css'
+import './input.css';
+import {useState} from 'react';
 
 function Input(props){
+   const [text, setText] = useState('');
+   
+  const handleChange = (e) => {
+      setText(e.target.value);
+   }
+
    return (
-      <div className = 'inputbox'>
-         <input placeholder = {props.placeholder} type={props.inputType}></input>
-         <button id = "hello">Submit</button>
+      <div className = 'inputbox' id = 'hello'>
+         <input placeholder = {props.placeholder} type={props.inputType} onChange={handleChange}></input>
       </div>
       
    )

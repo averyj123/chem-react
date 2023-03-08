@@ -4,9 +4,10 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   margin: 5px;
 }
 
-#hello {
+#button {
    background-color: rgb(216, 255, 214);
    border: 2px solid rgb(97, 169, 90);
    border-radius: 10px;
@@ -26,7 +27,7 @@
    border: 1px solid rgba(0, 0, 0, 0.47);
 }
 
-#hello:hover {
+#button:hover {
    background-color: rgb(97, 169, 90);
    color: white;
 }
