@@ -1,5 +1,6 @@
 import './App.css';
 import Input from './input/input.js';
+import Submit from './submit/submit.js'
 import {useState} from 'react';
 
 function App(props) {
@@ -30,6 +31,7 @@ function App(props) {
           <>
             <Input placeholder = "grams" inputType="number"/>
             <Input placeholder = "molecule" inputType="text"/>
+            <Submit />
           </>
           )}
         <button id="conc" onClick = {handleCtogClick}>concentration to grams</button>
@@ -38,6 +40,7 @@ function App(props) {
             <Input placeholder = "concentration" inputType = "number"/>
             <Input placeholder = "volume" inputType="number"/>
             <Input placeholder = "molecule" inputType="text"/>
+            <Submit />
           </>
           )}
         <button id="moles" onClick = {handleMtogClick}>moles to grams</button>
@@ -45,11 +48,18 @@ function App(props) {
           <>
             <Input placeholder = "moles" inputType="number"/>
             <Input placeholder = "molecule" inputType="text"/>
+            <Submit />
           </>
           )}
     </div>
+    <h1>TO DO</h1>
+    <ul>
+      <li>add a program taht handles the input, using old code</li>
+      <li>make a way to display the results of that input in a neat way</li>
+      <li>add transitions for opening and closing buttons</li>
+      <li> use regex to verify input</li>
+    </ul>
    </>
   );
 }
-
 export default App;
