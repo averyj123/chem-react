@@ -1,8 +1,4 @@
 
-let concButton = document.getElementById('conc');
-let molButton = document.getElementById('moles');
-let gramButton = document.getElementById('grams');
-
 const elements = {
    H: 1.008,
    Li: 6.94,
@@ -95,9 +91,8 @@ const elements = {
 }
 let nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-export function getList() {
+function getList(molecule) {
    //get molecule thing
-   let molecule = window.prompt('what is the molecule?');
    let comps = [];
    let comp = ""
    for(let i=0; i<molecule.length; i++) {
@@ -114,8 +109,8 @@ comps.push(comp);
 return comps;
 }
 
-export function getMolar() {
-   let components = getList()
+function getMolar(molecule) {
+   let components = getList(molecule);
    let molarMass = 0;
    for(let i = 0; i<components.length; i++) {
      if(nums.includes(components[i][components[i].length-1])) {
@@ -136,33 +131,30 @@ export function getMolar() {
    return molarMass;
 }
 
-export function getGrams() {
-   let mass = getMolar();
+function getGrams(molecule, moles) {
+   let mass = getMolar(molecule);
    if(mass){
-      let moles = Number(window.prompt('how many moles are there?'));
-      window.alert(`molar mass: ${mass} \n GRAMS: ${mass * moles}`);
+      return `molar mass: ${mass} \n GRAMS: ${mass * moles}`;
    }
 }
-molButton.addEventListener('click', getGrams);
+//molButton.addEventListener('click', getGrams);
 
-export function getConc() {
-   let mass = getMolar();
+function getConc(molecule, concen, vol) {
+   let mass = getMolar(molecule);
    if(mass){
-      let concen = window.prompt('what is the concentration?');
-      let vol = window.prompt('what is the volume? (liters)');
       let moles = concen * vol;
-      window.alert(`molar mass: ${mass} \n moles: ${moles} \nGRAMS: ${moles*mass}`);
+      return `molar mass: ${mass} \n moles: ${moles} \nGRAMS: ${moles*mass}`;
    } 
 }
-concButton.addEventListener('click', getConc);
+//concButton.addEventListener('click', getConc);
 
-export function getMoles() {
-   let mass =getMolar();
+function getMoles(molecule, grams) {
+   let mass =getMolar(molecule);
    if(mass){
-      let grams = window.prompt('how many grams?')
-      window.alert(`Molar mass: ${mass} \n number of moles: ${grams/mass}`)
+      return `Molar mass: ${mass} \n number of moles: ${grams/mass}`;
    }
 }
-gramButton.addEventListener('click', getMoles);
+//gramButton.addEventListener('click', getMoles);
 
 
+export {getGrams, getConc, getMoles};

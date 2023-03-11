@@ -1,5 +1,6 @@
 import './input.css';
 import {useState} from 'react';
+import Submit from '../submit/submit.js'
 
 function Input(props){
    const [text, setText] = useState('');
@@ -10,7 +11,8 @@ function Input(props){
 
    return (
       <div className = 'inputbox' id = 'hello'>
-         <input placeholder = {props.placeholder} type={props.inputType} onChange={handleChange}></input>
+         <input placeholder = {props.placeholder} type={props.inputType} onChange={handleChange} className="anInput"></input>
+         <Submit information={["H2O", "2"]} />
       </div>
       
    )
