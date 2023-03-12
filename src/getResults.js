@@ -148,10 +148,17 @@ function getConc(molecule, concen, vol) {
 }
 //concButton.addEventListener('click', getConc);
 
-function getMoles(molecule, grams) {
+function getMoles(grams, molecule) {
    let mass =getMolar(molecule);
+   let gramsNum = parseInt(grams);
+
+   console.log(mass);
+   console.log(grams);
+   console.log(molecule);
+   console.log(gramsNum);
+
    if(mass){
-      return `Molar mass: ${mass} \n number of moles: ${grams/mass}`;
+      return `Molar mass: ${mass} \n number of moles: ${gramsNum/mass}`;
    }
 }
 //gramButton.addEventListener('click', getMoles);

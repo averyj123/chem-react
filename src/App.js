@@ -8,6 +8,27 @@ function App(props) {
   const [gtomclicked, setGtomClicked] = useState(false);
   const [ctogclicked, setCtogClicked] = useState(false);
   const [mtogclicked, setMtogClicked] = useState(false);
+  const [gramText, setGramText] = useState('');
+  const [moleculeText, setMoleculeText] = useState('');
+  const [molesText, setMolesText] = useState('');
+  const [concentrationText, setConcentrationText] = useState('');
+  const [volumeText, setVolumeText] = useState('');
+   
+  const handleGramChange = (e) => {
+      setGramText(e.target.value);
+   }
+   const handleMoleculeChange = (e) => {
+      setMoleculeText(e.target.value);
+   }
+   const handleMolesChange = (e) => {
+      setMolesText(e.target.value);
+   }
+   const handleConcentrationChange = (e) => {
+      setConcentrationText(e.target.value);
+   }
+   const handleVolumeChange = (e) => {
+      setVolumeText(e.target.value);
+   }
 
   const handleMtogClick = (e) => {
     setMtogClicked(prev => {return !prev});
@@ -30,7 +51,7 @@ function App(props) {
         <button id="grams" onClick = {handleGtomClick}>grams to moles</button>
         {gtomclicked && (
           <>
-            <InputBox placeholders = {["grams", "molecule"] } inputTypes={["number", "text"]}/>
+            <InputBox placeholders = {["grams", "molecule"] } inputTypes={["number", "text"]} handleChange={[handleGramChange, handleMoleculeChange, handleMolesChange,handleConcentrationChange, handleVolumeChange]} texts ={[gramText, moleculeText, molesText, concentrationText, volumeText]}/>
           </>
           )}
         <button id="conc" onClick = {handleCtogClick}>concentration to grams</button>
@@ -51,7 +72,7 @@ function App(props) {
     </div>
     <h1>TO DO</h1>
     <ul>
-      <li>add a program taht handles the input, using old code</li>
+      <li>fix submit button thing</li>
       <li>make a way to display the results of that input in a neat way</li>
       <li>add transitions for opening and closing buttons</li>
       <li> use regex to verify input</li>

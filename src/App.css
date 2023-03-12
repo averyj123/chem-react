@@ -12,6 +12,11 @@
   background-color: rgb(120, 213, 120);
   justify-content: center;
   margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-top: 5px solid rgb(109, 193, 109);
+  border-bottom: 5px solid rgb(109, 193, 109);
 }
 
 h1 {
@@ -27,11 +32,12 @@ h1 {
 }
 
 .buttons {
+  margin: 20px;
+  margin-top: 110px;
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
   flex-direction: column;
-  margin: 20px;
   align-items: center;
 }
 
