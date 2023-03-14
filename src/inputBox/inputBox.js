@@ -1,10 +1,10 @@
 import './inputBox.css';
-//import {useState} from 'react';
 import Input from '../input/input.js';
 import Submit from '../submit/submit.js';
 
 
 function InputBox(props){   
+
   const renderButtons = () => {
    let inputs = [];
    const changes = {
@@ -15,7 +15,7 @@ function InputBox(props){
       "volume": props.handleChange[4]
    }
    for(let i = 0; i < props.placeholders.length; i++) {
-      inputs.push(<Input placeholder={props.placeholders[i]} inputType={props.inputTypes[i]} className="inputs" handleChange={changes[props.placeholders[i]]}/>);
+      inputs.push(<Input placeholder={props.placeholders[i]} inputType={props.inputTypes[i]} className="inputs" handleChange={changes[props.placeholders[i]]} enabled={props.enabled} setEnabled={props.setEnabled}/>);
    }
      return inputs
    }
@@ -23,7 +23,7 @@ function InputBox(props){
    return (
       <div className = 'inputbox' id = 'hello'>
          {renderButtons()}
-         <Submit information={props.texts} />
+         <Submit information={props.texts} enabled={props.enabled} setEnabled={props.setEnabled}/>
       </div>
       
    )

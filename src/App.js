@@ -13,21 +13,38 @@ function App(props) {
   const [molesText, setMolesText] = useState('');
   const [concentrationText, setConcentrationText] = useState('');
   const [volumeText, setVolumeText] = useState('');
+  const [enabled, setEnabled] = useState(true);
+
    
   const handleGramChange = (e) => {
       setGramText(e.target.value);
+      if(!enabled){
+        setEnabled(true);
+      }
    }
    const handleMoleculeChange = (e) => {
       setMoleculeText(e.target.value);
+      if(!enabled){
+        setEnabled(true);
+      }
    }
    const handleMolesChange = (e) => {
       setMolesText(e.target.value);
+      if(!enabled){
+        setEnabled(true);
+      }
    }
    const handleConcentrationChange = (e) => {
       setConcentrationText(e.target.value);
+      if(!enabled){
+        setEnabled(true);
+      }
    }
    const handleVolumeChange = (e) => {
       setVolumeText(e.target.value);
+      if(!enabled){
+        setEnabled(true);
+      }
    }
 
   const handleMtogClick = (e) => {
@@ -51,15 +68,13 @@ function App(props) {
         <button id="grams" onClick = {handleGtomClick}>grams to moles</button>
         {gtomclicked && (
           <>
-            <InputBox placeholders = {["grams", "molecule"] } inputTypes={["number", "text"]} handleChange={[handleGramChange, handleMoleculeChange, handleMolesChange,handleConcentrationChange, handleVolumeChange]} texts ={[gramText, moleculeText, molesText, concentrationText, volumeText]}/>
+            <InputBox enabled ={enabled} setEnabled={setEnabled} placeholders = {["grams", "molecule"] } inputTypes={["number", "text"]} handleChange={[handleGramChange, handleMoleculeChange, handleMolesChange,handleConcentrationChange, handleVolumeChange]} texts ={[gramText, moleculeText, molesText, concentrationText, volumeText]}/>
           </>
           )}
         <button id="conc" onClick = {handleCtogClick}>concentration to grams</button>
         {ctogclicked &&  (
           <>
-            <Input placeholder = "concentration" inputType = "number"/>
-            <Input placeholder = "volume" inputType="number"/>
-            <Input placeholder = "molecule" inputType="text"/>
+            <InputBox enabled ={enabled} setEnabled={setEnabled} placeholders = {["concentration", "volume", "molecule"] } inputTypes={["number", "number", "text"]} handleChange={[handleGramChange, handleMoleculeChange, handleMolesChange,handleConcentrationChange, handleVolumeChange]} texts ={[gramText, moleculeText, molesText, concentrationText, volumeText]}/>
           </>
           )}
         <button id="moles" onClick = {handleMtogClick}>moles to grams</button>

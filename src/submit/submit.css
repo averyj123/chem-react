@@ -1,4 +1,4 @@
-#button {
+#enabled-button {
    background-color: rgb(216, 255, 214);
    border: 2px solid rgb(97, 169, 90);
    border-radius: 10px;
@@ -11,7 +11,46 @@
    padding: 5px;
 }
 
-#button:hover {
+#enabled-button:hover {
    background-color: rgb(97, 169, 90);
    color: white;
+}
+
+#disabled-button {
+   background-color: rgb(224, 224, 224);
+   border: 2px solid rgb(170, 170, 170);
+   border-radius: 10px;
+   color: rgb(125, 125, 125);
+   font-weight: 500;
+   font-size: 15px;
+   font-family: Barlow;
+   width: 80px;
+   height: 35px;
+   padding: 5px;
+}
+
+#disabled-button:hover {
+   cursor: not-allowed;
+   color: white;
+}
+
+.results {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.results h1 {
+   background-color: transparent;
+   color: rgb(97, 169, 90);
+   margin: 2px;
+   font-size: 25px;
+   line-height: 40px;
+}
+
+.resultsBox {
+   border: 3px dashed rgb(97, 169, 90);
+   border-radius: 20px;
+   padding: 10px;
+   margin: 20px;
 }

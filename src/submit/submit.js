@@ -25,11 +25,15 @@ function Submit(props){
             info.push(lst[i]);
          }
       }
+      console.log(indexes);
+      console.log(info);
       //return indexes;
       if(arrayEquals(indexes, [0,1])) {
          return [getMoles, info];
+      } else if(arrayEquals(indexes, [1,3,4])){
+                  console.log('im running');
+         return [getGrams, info];
       }
-      console.log(indexes);
    }
    const handleClick = () => {
       const results = pickFunction();
@@ -37,13 +41,19 @@ function Submit(props){
       const info = results[1];
       console.log(info)
       setResults(func.apply(null,info));
+      console.log(results);
+      props.enabled  && props.setEnabled(false);
    }
    
    return (
-      <>
-         <button type="submit" id="button" onClick = {handleClick}>Submit</button>
-         <h1>{results}</h1>
-      </>
+      <div className = "results">
+         <button type="submit" id={props.enabled ? "enabled-button" : "disabled-button"} onClick = {handleClick}>Submit</button>
+         {results}
+         {!props.enabled && results && <div className = "resultsBox">
+            {results}
+         </div>}
+         
+      </div>
       
    )
 }

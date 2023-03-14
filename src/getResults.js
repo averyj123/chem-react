@@ -131,10 +131,10 @@ function getMolar(molecule) {
    return molarMass;
 }
 
-function getGrams(molecule, moles) {
+function getGrams(molecule, concentration, volume) {
    let mass = getMolar(molecule);
    if(mass){
-      return `molar mass: ${mass} \n GRAMS: ${mass * moles}`;
+      return `molar mass: ${mass} \n GRAMS: ${concentration * volume * mass} `;
    }
 }
 //molButton.addEventListener('click', getGrams);
@@ -143,6 +143,7 @@ function getConc(molecule, concen, vol) {
    let mass = getMolar(molecule);
    if(mass){
       let moles = concen * vol;
+      
       return `molar mass: ${mass} \n moles: ${moles} \nGRAMS: ${moles*mass}`;
    } 
 }
@@ -158,7 +159,7 @@ function getMoles(grams, molecule) {
    console.log(gramsNum);
 
    if(mass){
-      return `Molar mass: ${mass} \n number of moles: ${gramsNum/mass}`;
+      return [<h1>Molar Mass: {mass.toFixed(3)}</h1>, <h1>Number of Moles: {(gramsNum/mass).toFixed(3)}</h1> ];
    }
 }
 //gramButton.addEventListener('click', getMoles);
