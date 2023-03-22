@@ -2,7 +2,7 @@ import './App.css';
 import Input from './input/input.js';
 import Submit from './submit/submit.js'
 import InputBox from './inputBox/inputBox.js'
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function App(props) {
   const [gtomclicked, setGtomClicked] = useState(false);
